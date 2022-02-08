@@ -10,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.codeborne.selenide.Browsers.CHROME;
+
 public class SelenoidExtension implements BeforeAllCallback {
 
     @Override
@@ -18,6 +20,7 @@ public class SelenoidExtension implements BeforeAllCallback {
         Configuration.baseUrl = "http://192.168.0.101:8080/";
         Configuration.reportsFolder = "target/surefire-reports";
         Configuration.downloadsFolder = "target/downloads";
+        Configuration.browser = CHROME;
 
         Map<String, Boolean> options = new HashMap<>();
         options.put("enableVNC", true);
