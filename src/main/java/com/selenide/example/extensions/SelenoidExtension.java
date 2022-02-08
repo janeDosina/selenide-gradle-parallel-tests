@@ -17,7 +17,7 @@ public class SelenoidExtension implements BeforeAllCallback {
     @Override
     public void beforeAll(ExtensionContext context) {
         Configuration.remote = "http://localhost:4444/wd/hub";
-        Configuration.baseUrl = "http://192.168.0.101:8080/";
+        Configuration.baseUrl = "http://192.168.0.101:8081/";
         Configuration.reportsFolder = "target/surefire-reports";
         Configuration.downloadsFolder = "target/downloads";
         Configuration.browser = CHROME;
