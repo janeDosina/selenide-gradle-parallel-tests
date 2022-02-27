@@ -1,0 +1,18 @@
+version: '3'
+services:
+  selenoid:
+    network_mode: bridge
+    image: aerokube/selenoid
+    volumes:
+      - "$PWD:/etc/selenoid"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    ports:
+      - "4444:4444"
+  # selenoid-ui:
+  #   links:
+  #      - selenoid
+  #   network_mode: bridge
+  #   image: aerokube/selenoid-ui
+  #   ports:
+  #     - "8085:8080"
+  #   command: -selenoid-uri http://localhost:4444

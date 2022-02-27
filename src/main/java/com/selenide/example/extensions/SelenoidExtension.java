@@ -16,19 +16,19 @@ public class SelenoidExtension implements BeforeAllCallback {
 
     @Override
     public void beforeAll(ExtensionContext context) {
-        Configuration.remote = "http://localhost:4444/wd/hub";
-        Configuration.baseUrl = "http://192.168.0.101:8081/";
+        Configuration.remote = "http://192.168.0.101:4444/wd/hub";
+//        Configuration.baseUrl = "http://192.168.0.101:8080";
         Configuration.reportsFolder = "target/surefire-reports";
         Configuration.downloadsFolder = "target/downloads";
         Configuration.browser = CHROME;
 
-        Map<String, Boolean> options = new HashMap<>();
-        options.put("enableVNC", true);
-        options.put("enableVideo", true);
-        options.put("enableLog", true);
+//        Map<String, Boolean> options = new HashMap<>();
+//        options.put("enableVNC", true);
+//        options.put("enableVideo", true);
+//        options.put("enableLog", true);
 
         Configuration.browserCapabilities = new ChromeOptions();
-        Configuration.browserCapabilities.setCapability("selenoid:options", options);
+//        Configuration.browserCapabilities.setCapability("selenoid:options", options);
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
     }
 }
