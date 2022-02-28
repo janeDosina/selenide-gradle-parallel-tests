@@ -12,7 +12,7 @@ pipeline{
 		stage("Start Selenoid"){
 			steps{
 				sh "docker-compose up -d --no-color"
-				sh "healthcheck.sh"
+// 				sh "healthcheck.sh"
 			}
 		}
 		stage("Run tests"){
